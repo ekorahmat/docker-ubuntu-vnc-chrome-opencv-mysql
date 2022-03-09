@@ -1,0 +1,6 @@
+virtualenv
+mysql-connector-python
+python-xlib
+PyVirtualDisplay
+selenium
+pyautogui
