@@ -28,6 +28,8 @@ RUN Xvfb :99 -ac &
 RUN export DISPLAY=:99
 # INSTALL scrot
 RUN apt-get install -y scrot
+# INSTALL xdotool
+RUN apt-get install -y xdotool
 # INSTALL pip requirements
 RUN mkdir /app
 COPY requirements.txt /app
