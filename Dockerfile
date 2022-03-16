@@ -21,11 +21,14 @@ RUN cd /usr/local/bin && unzip chromedriver.zip
 RUN chmod +x /usr/local/bin/chromedriver
 # INSTALL opencv
 RUN apt-get install -y libopencv-dev python3-opencv
+# INSTALL tesseract
+RUN apt-get install -y tesseract-ocr
 # INSTALL xlib xvfb xserver
 RUN apt install -y python3-xlib python3-tk python3-dev
 RUN apt install -y xvfb xserver-xephyr
 RUN Xvfb :99 -ac &
 RUN export DISPLAY=:99
+
 # INSTALL scrot
 RUN apt-get install -y scrot
 # INSTALL xdotool
@@ -34,3 +37,6 @@ RUN apt-get install -y xdotool
 RUN mkdir /app
 COPY requirements.txt /app
 RUN pip3 install -r /app/requirements.txt
+
+# COPY supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
