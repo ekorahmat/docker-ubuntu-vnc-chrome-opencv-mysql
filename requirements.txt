@@ -5,3 +5,4 @@ PyVirtualDisplay
 selenium
 pyautogui
 pytesseract
+clipboard

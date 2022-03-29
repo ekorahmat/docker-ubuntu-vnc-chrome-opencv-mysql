@@ -28,6 +28,8 @@ RUN apt install -y python3-xlib python3-tk python3-dev
 RUN apt install -y xvfb xserver-xephyr
 RUN Xvfb :99 -ac &
 RUN export DISPLAY=:99
+# INSTALL xsel
+RUN apt install xsel
 
 # INSTALL scrot
 RUN apt-get install -y scrot
